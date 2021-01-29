@@ -35,6 +35,15 @@ const init = () => {
   }
 };
 
+const showEnd = () => {
+  $question.textContent = "終了！あなたのスコアは" + score + "/" + quizLength + "です";
+  
+const $items = $doc.getElementById("js-items");
+$items.style.visibility = "hidden";
+};
+
+init();
+
 const setupQuiz = () => {
    quizIndex++;
   if(quizIndex < quizLength){
@@ -54,15 +63,6 @@ const clickHandler = (elm) => {
   } 
   setupQuiz();
 };
-
-const showEnd = () => {
-  $question.textContent = "終了！あなたのスコアは" + score + "/" + quizLength + "です";
-  
-const $items = $doc.getElementById("js-items");
-$items.style.visibility = "hidden";
-};
-
-init();
 
 let answersIndex = 0;
 let answersLength = quiz[quizIndex].answers.length;
